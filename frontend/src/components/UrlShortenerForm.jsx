@@ -9,6 +9,7 @@ const UrlShortenerForm = () => {
   const [copied, setCopied] = useState(false);
 
   const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BACKEND_URL = import.meta.env.BACKEND_URL;
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ const UrlShortenerForm = () => {
     
     setLoading(true);
     try{
-      const request = await fetch("http://localhost:5000/api/shorten", {
+      const request = await fetch(`${BACKEND_URL}/api/shorten`, {
         method: "POST",
         headers: {
           "Content-Type":"application/json"
