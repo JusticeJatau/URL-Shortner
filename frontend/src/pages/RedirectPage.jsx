@@ -23,7 +23,7 @@ function RedirectPage() {
     redirect();
   }, [token]);
 
-  return <h2>Redirecting...</h2>;
+  return <></>;
 }
 
 export default RedirectPage;
