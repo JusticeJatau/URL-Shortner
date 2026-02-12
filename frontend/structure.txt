@@ -1,0 +1,21 @@
+echo-url-shortener/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── UrlShortenerForm.jsx
+│   │   ├── Features.jsx
+│   │   ├── Stats.jsx
+│   │   ├── Footer.jsx
+│   │   └── RecentLinks.jsx
+│   ├── pages/
+│   │   └── Home.jsx
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── tailwind.config.js
+├── package.json
+└── README.md
