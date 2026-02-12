@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 function RedirectPage() {
   const { token } = useParams();
 
@@ -8,7 +10,7 @@ function RedirectPage() {
     const redirect = async () => {
       try {
         const request = await fetch(
-          `http://localhost:5000/api/s/${token}`
+          `${BACKEND_URL}/api/s/${token}`
         );
         const response = await request.json()
         console.log(response)
