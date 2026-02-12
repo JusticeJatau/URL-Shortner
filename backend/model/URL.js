@@ -18,11 +18,10 @@ const urlSchema = new mongoose.Schema(
         // },
     },
   {
-    timestamps: true, // creates createdAt + updatedAt
+    timestamps: true,
   }
 );
 
-// Optional index (only if you query by userId often)
 urlSchema.index({ userId: 1 });
 
 const Url = mongoose.model("Url", urlSchema);

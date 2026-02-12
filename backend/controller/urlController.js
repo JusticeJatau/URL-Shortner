@@ -17,7 +17,7 @@ const createShortUrl = async (req, res) => {
 
     if (url) {
       // URL already exists → get its token
-      const shortId = generateUniqueId();
+      const shortId = generateUniqueId(2);
       token = await Token.create({
         token: shortId,
         Url: url._id,
@@ -66,22 +66,10 @@ const redirectToOriginalUrl = async (req, res) => {
   })
 };
 
-// Get URL analytics
-const getUrlAnalytics = async (req, res) => {
-  const { shortId } = req.params;
-  const token = await Token.findOne({ token: shortId }).populate("Url");
-  if (!token) return res.status(404).json({ error: 'URL not found' });
-
-  res.json({
-    success: true,
-    token
-  });
-};
-
 // Get all URLs
 const getAllUrls = async (req, res) => {
   const urls = await Url.find().sort({ createdAt: -1 }).select('originalUrl shortUrl shortId clicks');
   res.json({ success: true, data: urls });
 };
 
-export { createShortUrl, redirectToOriginalUrl, getUrlAnalytics, getAllUrls };
+export { createShortUrl, redirectToOriginalUrl, getAllUrls };

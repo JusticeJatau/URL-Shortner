@@ -26,8 +26,6 @@ const UrlShortenerForm = () => {
       })
 
       const response = await request.json()
-      // const token = response.data.token
-      // console.log(response)
       const url = `${BASE_URL}/s/${response.token}`
       setShortUrl(url);
 
@@ -74,7 +72,7 @@ const UrlShortenerForm = () => {
                 </div>
               </div>
               
-              <div>
+              {/* <div>
                 <label className="block text-gray-700 mb-2 font-medium">Custom Alias (Optional)</label>
                 <div className="flex">
                   <div className="flex items-center bg-gray-100 px-4 rounded-l-lg border border-r-0 border-gray-300">
@@ -89,7 +87,7 @@ const UrlShortenerForm = () => {
                   />
                 </div>
                 <p className="text-sm text-gray-500 mt-2">Leave empty for auto-generated alias</p>
-              </div>
+              </div> */}
               
               <button
                 type="submit"

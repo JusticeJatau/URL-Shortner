@@ -7,11 +7,8 @@ import urlRoutes from './routes/urlRoutes.js';
 dotenv.config();
 
 const app = express();
-
-// Connect to database
 connectDB();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,5 +35,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Echo URL Shortener API running on port ${PORT}`);
   console.log(`Base URL: ${process.env.BASE_URL || `http://localhost:${PORT}`}`);
-  console.log(`Reacr URL: ${process.env.REACT_URL}`);
 });

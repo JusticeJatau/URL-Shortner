@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 
 const generateUniqueId = (length = 4) => {
-  const timestamp = Date.now().toString(36); // e.g., 'kfj7s'
+  const timestamp = Date.now().toString(36).slice(-4);
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let randomPart = '';
   const randomBytes = crypto.randomBytes(length);
@@ -10,7 +10,7 @@ const generateUniqueId = (length = 4) => {
     randomPart += chars[randomBytes[i] % chars.length];
   }
 
-  return `${timestamp}${randomPart}`; // e.g., 'kfj7sA1bC'
+  return `${timestamp}${randomPart}`;
 };
 
 export { generateUniqueId };
