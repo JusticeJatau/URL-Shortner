@@ -17,13 +17,14 @@ const Header = () => {
             <a href="#pricing" className="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
             <a href="#faq" className="text-gray-600 hover:text-blue-600 transition-colors">FAQ</a>
           </nav>
-          
+          {/* 
           <div className="flex items-center space-x-4">
             <button className="text-blue-600 hover:text-blue-700 font-medium">Login</button>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 hover:shadow-lg">
               Get Started
             </button>
           </div>
+          */}
         </div>
       </div>
     </header>
